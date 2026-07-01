@@ -26,9 +26,8 @@ const TCP_CONCURRENCY = 2;
 const PRELOAD_RACE_DIAL = true;
 const CURRENT_VERSION = "1.4.9-arianjj"; // نسخه اختصاصی
 
-// آدرس ریپوی شخصی برای دریافت لیست IPها (در صورت نیاز)
-const IPS_REPO_URL = "https://github.com/IR-NETLIFY/zeus/main/ips.txt";
-// لطفاً YOUR_USERNAME و YOUR_REPO را با اطلاعات خود جایگزین کنید.
+// آدرس ریپوی شخصی برای دریافت لیست IPها (arianjj)
+const IPS_REPO_URL = "https://raw.githubusercontent.com/arianjojo/arianjj/main/ips.txt";
 
 // ==========================================================
 // ۳. نقطه ورود اصلی ورکر (MAIN FETCH HANDLER)
@@ -3393,10 +3392,9 @@ function editUser(encodedUsername) {
 const CURRENT_VERSION = '1.4.9-arianjj';
 let cachedIpsData = {};
 
-// ===== دریافت لیست IPها از ریپوی شخصی =====
+// ===== دریافت لیست IPها از ریپوی شخصی (arianjj) =====
 // آدرس ریپوی شخصی برای دریافت ips.txt
-const IPS_REPO_URL = "https://github.com/IR-NETLIFY/zeus/main/ips.txt";
-// لطفاً YOUR_USERNAME و YOUR_REPO را با اطلاعات خود جایگزین کنید.
+const IPS_REPO_URL = "https://raw.githubusercontent.com/arianjojo/arianjj/main/ips.txt";
 
 async function fetchIpsList() {
     try {

@@ -27,7 +27,7 @@ const PRELOAD_RACE_DIAL = true;
 const CURRENT_VERSION = "1.4.9-arianjj"; // نسخه اختصاصی
 
 // آدرس ریپوی شخصی برای دریافت لیست IPها (در صورت نیاز)
-const IPS_REPO_URL = "https://github.com/arianjojo/arianjj/blob/main/ips.txt";
+const IPS_REPO_URL = "https://github.com/IR-NETLIFY/zeus/main/ips.txt";
 // لطفاً YOUR_USERNAME و YOUR_REPO را با اطلاعات خود جایگزین کنید.
 
 // ==========================================================
@@ -3395,7 +3395,7 @@ let cachedIpsData = {};
 
 // ===== دریافت لیست IPها از ریپوی شخصی =====
 // آدرس ریپوی شخصی برای دریافت ips.txt
-const IPS_REPO_URL = "https://github.com/arianjojo/arianjj/blob/main/ips.txt";
+const IPS_REPO_URL = "https://github.com/IR-NETLIFY/zeus/main/ips.txt";
 // لطفاً YOUR_USERNAME و YOUR_REPO را با اطلاعات خود جایگزین کنید.
 
 async function fetchIpsList() {

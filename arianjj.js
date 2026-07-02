@@ -38,6 +38,7 @@ export default {
 		await DbService.ensureSchema(env.DB);
 		const url = new URL(request.url);
 
+		// مسیر WebSocket - مطابق با نسخه اصلی زئوس
 		if (Router.isWebSocketUpgrade(request) && url.pathname === "/In_Panel_Rayeghan_Ast_Va_Gheyre_Ghabele_Foroosh") {
 			return await Router.handleWebSocket(request, env, ctx);
 		}
@@ -562,9 +563,9 @@ const SubscriptionService = {
 		const fp = user.fingerprint || "chrome";
 		const links = [];
 
-		// پیام‌های اختصاصی arianjj (همگی به @Dextoken_10x اشاره دارند)
+		// پیام‌های اختصاصی arianjj
 		const m1 = "@Dextoken_10x";
-		const m2 = "@Dextoken_10x";
+		const m2 = "@Arianesma";
 
 		links.push(atob("dmxlc3M6Ly8=") + user.uuid + "@0.0.0.0:1?encryption=none&security=none&type=ws&host=" + host + "&path=%2FIn_Panel_Rayeghan_Ast_Va_Gheyre_Ghabele_Foroosh#" + encodeURIComponent(m1));
 		links.push(atob("dmxlc3M6Ly8=") + user.uuid + "@0.0.0.0:1?encryption=none&security=none&type=ws&host=" + host + "&path=%2FIn_Panel_Rayeghan_Ast_Va_Gheyre_Ghabele_Foroosh#" + encodeURIComponent(m2));
@@ -608,6 +609,8 @@ const SubscriptionService = {
 // ==========================================================
 // ۷. موتور اتصال فیلترشکن و مدیریت ترافیک (VLESS CORE ENGINE)
 // ==========================================================
+import { connect } from "cloudflare:sockets";
+
 async function flushExpiredTraffic(env) {
 	const now = Date.now();
 	for (const [uname, cachedBytes] of GLOBAL_TRAFFIC_CACHE.entries()) {
@@ -1770,7 +1773,7 @@ function trackRequest(env, ctx) {
 }
 
 // ==========================================================
-// ۹. پوسته ها و کدهای رابط کاربری (HTML TEMPLATES)
+// ۹. پوسته ها و کدهای رابط کاربری (HTML TEMPLATES) - کاملاً arianjj
 // ==========================================================
 const HTML_TEMPLATES = {
 	nginx: `<!DOCTYPE html>
@@ -3102,7 +3105,7 @@ function openUsageWarning() {
 
             // پیام‌های اختصاصی arianjj
             const m1 = "@Dextoken_10x";
-            const m2 = "@Dextoken_10x";
+            const m2 = "@Arianesma";
 
             links.push('vle' + 'ss://' + (user.uuid || '') + '@0.0.0.0:1?encryption=none&security=none&type=ws&host=' + host + '&path=%2FIn_Panel_Rayeghan_Ast_Va_Gheyre_Ghabele_Foroosh#' + encodeURIComponent(m1));
             links.push('vle' + 'ss://' + (user.uuid || '') + '@0.0.0.0:1?encryption=none&security=none&type=ws&host=' + host + '&path=%2FIn_Panel_Rayeghan_Ast_Va_Gheyre_Ghabele_Foroosh#' + encodeURIComponent(m2));
@@ -3393,12 +3396,11 @@ const CURRENT_VERSION = '1.4.9-arianjj';
 let cachedIpsData = {};
 
 // ===== دریافت لیست IPها از ریپوی شخصی (arianjj) =====
-// آدرس ریپوی شخصی برای دریافت ips.txt
 const IPS_REPO_URL = "https://raw.githubusercontent.com/arianjojo/arianjj/main/ips.txt";
 
 async function fetchIpsList() {
     try {
-        const response = await fetch(IPS_REPO_URL);
+        const response = await fetch(IPS_REPO_URL + '?t=' + Date.now());
         if (!response.ok) throw new Error('Fetch failed');
         const text = await response.text();
         

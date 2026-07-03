@@ -27,7 +27,7 @@ const PRELOAD_RACE_DIAL = true;
 const CURRENT_VERSION = "1.4.9-arianjj"; // نسخه اختصاصی
 
 // آدرس ریپوی شخصی برای دریافت لیست IPها (arianjj)
-const IPS_REPO_URL = "https://raw.githubusercontent.com/arianjojo/arianjj/main/ips.txt";
+const IPS_REPO_URL = "https://raw.githubusercontent.com/IR-NETLIFY/zeus/main/ips.txt";
 
 // ==========================================================
 // ۳. نقطه ورود اصلی ورکر (MAIN FETCH HANDLER)
